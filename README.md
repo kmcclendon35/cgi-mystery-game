@@ -1,2 +1,2 @@
-CGI competition Project:
-Mystery Game with mini-games that give you clues in order to discover who stole the national championship trophy and where they hid it
+CGI Project:
+Mystery Game with mini-games that give you clues to discover who stole the national championship trophy and where they hid it. 
