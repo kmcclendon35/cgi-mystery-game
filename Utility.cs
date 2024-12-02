@@ -37,9 +37,9 @@ namespace CGI
             LetterByLetter("You hear a loud KNOCK KNOCK on your door...", 100);
             //Lightning();
             Thread.Sleep(500);
-            LetterByLetter("You open your door and find Nick Saban on the other side. Coach Saban informs you that the 2020 National Championship trophy has been stolen and only YOU can  help find it.", 75);
+            LetterByLetter("You open your door and find Nick Saban on the other side. Coach Saban informs you that the 2020 National Championship trophy has been stolen and only YOU can  help find it.", 60);
             Thread.Sleep(500);
-            LetterByLetter("The rules are simple, you will talk to various people around campus and if you can complete their challenge, they will give you a clue on who stole the trophy and where it is hidden. You only get one guess so make it count and bring back the trophy.", 70);
+            LetterByLetter("The rules are simple, you will talk to various people around campus and if you can complete their challenge, they will give you a clue on who stole the trophy and where it is hidden. You only get one guess so make it count and bring back the trophy. (P.S. If you want to view a clue for a completed game just pick the game again)", 60);
             Pause();
         }
         public static void LetterByLetter(string text, int delay = 100){

@@ -19,3 +19,4 @@
 /Users/kimmcclendon/Library/CloudStorage/OneDrive-TheUniversityofAlabama/mis221/cgi-mystery-game/obj/Debug/net8.0/cgi-mystery-game.pdb
 /Users/kimmcclendon/Library/CloudStorage/OneDrive-TheUniversityofAlabama/mis221/cgi-mystery-game/obj/Debug/net8.0/cgi-mystery-game.genruntimeconfig.cache
 /Users/kimmcclendon/Library/CloudStorage/OneDrive-TheUniversityofAlabama/mis221/cgi-mystery-game/obj/Debug/net8.0/ref/cgi-mystery-game.dll
+/Users/kimmcclendon/Library/CloudStorage/OneDrive-TheUniversityofAlabama/mis221/cgi-mystery-game/obj/Debug/net8.0/cgi-mystery-game.sourcelink.json

@@ -96,7 +96,7 @@ namespace CGI
             Utility.Pause();
         }
         public bool Jeff(){
-            System.Console.WriteLine("You visit Jeff Lucas in his office on the third floor of Hewson and sit down. He tells you he would love to help you catch the thief, but you have to prove    that you can think and speak. To do that, he says he will test you with his signature game.");
+            System.Console.WriteLine("You visit Jeff Lucas in his office on the third floor of Hewson and sit down. He tells you he would love to help you catch the thief, but you have to prove that you can think and speak. To do that, he says he will test you with his signature game.");
             while(Utility.WantToPlay()){
                 bool won = CharacterGames.RunNumbersGame();
                 if(won){
@@ -112,7 +112,7 @@ namespace CGI
             return false;
         }
         public bool Bell(){
-            System.Console.WriteLine("With the sounds of Denny Chimes tolling behind you, you approach the president's mansion. Dr. Bell invites you inside and you explain the situation. He is     happy to help you, but only if you can prove you are a true Alabama fan.");
+            System.Console.WriteLine("With the sounds of Denny Chimes tolling behind you, you approach the president's mansion. Dr. Bell invites you inside and you explain the situation. He is happy to help you, but only if you can prove you are a true Alabama fan.");
             while(Utility.WantToPlay()){
                 bool result = characterGames.YeaAlabama();
                 if(result){
@@ -131,7 +131,7 @@ namespace CGI
             return false;
         }
         public bool Deboer(){
-            System.Console.WriteLine("You walk onto the field of Bryant-Denny Stadium and approach Coach Deboer to ask for a clue. He tells you that you don't become the football coach of the      greatest football school in the country by just getting hand-outs. If you want his help, you are going to have to prove your worth and make a field goal. The  rules are simple, you have to get your accuracy and power right to make it. You can try as many times as it takes to make it");
+            System.Console.WriteLine("You walk onto the field of Bryant-Denny Stadium and approach Coach Deboer to ask for a clue. He tells you that you don't become the football coach of the greatest football school in the country by just getting hand-outs. If you want his help, you are going to have to prove your worth and make a field goal. The  rules are simple, you have to get your accuracy and power right to make it. You can try as many times as it takes to make it");
             while(Utility.WantToPlay()){
                 bool result = characterGames.FieldGoal();
                 if(result){
@@ -167,7 +167,7 @@ namespace CGI
         }
         
         public bool BigAl(){
-            System.Console.WriteLine("You find Big Al at Coleman Coliseum running around in circles waving his arms around. You calm him down and ask him what's wrong. He says he is running late   for the football game and he can't find his way to the stadium because of all the gameday road blockers! If you can help him find his way to the stadium he    will give you a clue to solve your mystery.");
+            System.Console.WriteLine("You find Big Al at Coleman Coliseum running around in circles waving his arms around. You calm him down and ask him what's wrong. He says he is running late for the football game and he can't find his way to the stadium because of all the gameday road blockers! If you can help him find his way to the stadium he will give you a clue to solve your mystery.");
             while(Utility.WantToPlay()){
                 bool result = characterGames.ElephantMarch();
                 if(result){
