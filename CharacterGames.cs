@@ -224,7 +224,7 @@ namespace CGI
             bool isRunning = true;
             System.Console.WriteLine("Press the space bar to get your power. Your power should be between 75 and 95");
             Utility.Pause();
-            while(isRunning){
+            while(isRunning){//moves the numbers up and down
                 if(increasing){
                     power += 5;
                 }else{
@@ -276,7 +276,7 @@ namespace CGI
                         return accuracy;
                     }
                 }
-                Thread.Sleep(105);
+                Thread.Sleep(105);//this one is slower bc the window is smaller
             }
             return accuracy;
         }
@@ -306,7 +306,7 @@ namespace CGI
                         maze[i, j] = row[j];
                 }
             }
-            inFile.Close();
+            inFile.Close(); //close
             return maze;
         }
         public static void Maze(string[,] maze, int bigAlCol, int bigAlRow){

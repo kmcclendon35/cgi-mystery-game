@@ -12,10 +12,11 @@ namespace CGI
     {
         public static void ShowTitle(){
             System.Console.Clear();
-            FigletFont font = FigletFont.Load("standard.flf");
+            FigletFont font = FigletFont.Load("standard.flf");//puts the title in a font and i made it red
             Figlet figlet = new Figlet(font);
             Colorful.Console.WriteLine(figlet.ToAscii("Trophy Mystery Game"), Color.Crimson);
         }
+        //adds colors based on difficulty of game
         public static void WriteMenu(){
             System.Console.Write("Choose from the following:\n1. See suspect list\n2. Talk to ");
             Colorful.Console.Write("Jeff Lucas", Color.Yellow);
@@ -53,17 +54,7 @@ namespace CGI
             System.Console.WriteLine("Press any key to continue...");
             System.Console.ReadKey();
             System.Console.Clear();
-        }
-        // public static void Lightning(){
-        //     for(int i = 0; i < 1; i++){
-        //         Colorful.Console.BackgroundColor = Color.White;
-        //         System.Console.Clear();
-        //         Thread.Sleep(100);
-        //         Colorful.Console.ResetColor();
-        //         System.Console.Clear();
-        //     }
-        // }
-      
+        }  
         public static bool WantToPlay(){
             System.Console.WriteLine("Would you like to play?(yes/no)");
             while(true){

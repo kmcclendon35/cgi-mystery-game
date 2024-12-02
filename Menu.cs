@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Linq;
 using System.Threading.Tasks;
 
@@ -12,7 +13,7 @@ namespace CGI
         private CharacterGames characterGames;
         public Menu(){
             utility = new Utility();
-            tracker = new GameTracker(5); // Adjust the constructor as needed
+            tracker = new GameTracker(5); //5 games
             characterGames = new CharacterGames(); 
         }
         public void ShowMenu(){
@@ -29,12 +30,12 @@ namespace CGI
                         GuessOptions();
                         break;
                     case "2":
-                        if(!GameTracker.GetGameCompleted(0)){
+                        if(!GameTracker.GetGameCompleted(0)){//check if game is complete or not so that you cannot replay a game you won
                             bool gameResult = Jeff();
                             Utility.PlayGame(0, gameResult);
                             Utility.Pause();
                         } else{
-                            System.Console.WriteLine($"You already played this game. Your clues were {GameTracker.GetClues(0)}");
+                            System.Console.WriteLine($"You already played this game. Your clues were {GameTracker.GetClues(0)}");//tells you the clue received if won already
                         }
                         break;
                     case "3":
@@ -97,13 +98,13 @@ namespace CGI
         }
         public bool Jeff(){
             System.Console.WriteLine("You visit Jeff Lucas in his office on the third floor of Hewson and sit down. He tells you he would love to help you catch the thief, but you have to prove that you can think and speak. To do that, he says he will test you with his signature game.");
-            while(Utility.WantToPlay()){
+            while(Utility.WantToPlay()){//checks if you want to play and then send you to the specific game
                 bool won = CharacterGames.RunNumbersGame();
                 if(won){
-                    return true;
+                    return true;//goes back to the menu and will output the clue
                 }else{
                     System.Console.WriteLine("You ran out of tries! Jeff is extremely disappointed in you and now your loved ones are in danger...");
-                    return false;
+                    return false;//no clue
                 }
             }
             System.Console.WriteLine("\nPress any key to return to the menu.");
@@ -187,19 +188,48 @@ namespace CGI
         public void MakeGuess(string userChoice){
             string[] hidingSpots = Suspects.GetHidingSpots();
             string[] suspectList = Suspects.GetSuspectList();
+            int thiefGuess;
+            int hidingGuess;
+            bool validThiefInput = false;
+            bool validSpotInput = false;
             System.Console.WriteLine("Are you ready to make your guess? Rememeber you only get one attempt or the game ends.");
-            System.Console.WriteLine("Who do you think stole the trophy? (Enter the number)");
-            for(int i = 0; i < suspectList.Length; i++){
-                System.Console.WriteLine($"{i + 1}. {suspectList[i]}");
-            }
-            int thiefGuess = int.Parse(Console.ReadLine())-1;
+            while(true){
+                System.Console.WriteLine("Who do you think stole the trophy? (Enter the number)");
+                for(int i = 0; i < suspectList.Length; i++){
+                    System.Console.WriteLine($"{i + 1}. {suspectList[i]}");
+                }
+                try{
+                    thiefGuess = int.Parse(Console.ReadLine())-1;
+                    if(thiefGuess >= 0 && thiefGuess < suspectList.Length){
+                        validThiefInput = true;
+                        break;
+                    }else{
+                        System.Console.WriteLine("Invalid Input. Please enter the number of your suspect");
+                    }
+                }catch(Exception e){
+                    System.Console.WriteLine(e.Message);
+                }       
+            }     
             Console.Clear();
-            System.Console.WriteLine("Where do you think they hid it? (Enter the number)");
-            for(int i = 0; i < hidingSpots.Length; i++){
-                System.Console.WriteLine($"{i + 1}. {hidingSpots[i]}");
+            while(true){
+                System.Console.WriteLine("Where do you think they hid it? (Enter the number)");
+                for(int i = 0; i < hidingSpots.Length; i++){
+                    System.Console.WriteLine($"{i + 1}. {hidingSpots[i]}");
+                }
+                try{
+                    hidingGuess = int.Parse(Console.ReadLine())-1;
+                    if(hidingGuess >= 0 && hidingGuess < hidingSpots.Length){
+                        validSpotInput = true;
+                        break;
+                    }else{
+                        System.Console.WriteLine("Invalid Input. Please enter the number of your location");
+                    }
+                }catch(Exception e){
+                    System.Console.WriteLine(e.Message);
+                }
             }
-            int hidingGuess = int.Parse(Console.ReadLine())-1;
             Console.Clear();
+            System.Console.WriteLine($"You guessed suspect {suspectList[thiefGuess]} and hiding spot {hidingSpots[hidingGuess]}.");
             string correctThief = Suspects.GetThief();
             string correctSpot = Suspects.GetTrophySpot();
             if(suspectList[thiefGuess] == correctThief && hidingSpots[hidingGuess] == correctSpot){

@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("cgi-mystery-game")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+ec488a5afa1acaa45b63e6b8630b8e95b8ddf2f0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+5df65f8b230abdce4a68524e8d27412e2a10c168")]
 [assembly: System.Reflection.AssemblyProductAttribute("cgi-mystery-game")]
 [assembly: System.Reflection.AssemblyTitleAttribute("cgi-mystery-game")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
